@@ -1,0 +1,20 @@
+﻿<section>
+    <!-- <h2 data-bind="text: displayName"></h2> -->
+    <!-- <input type="text" id="myInput" data-bind="search:afterkeydown" placeholder="Search" title="Type in a name"> -->
+    <input id='fieldSearch' placeholder=" Enter to Filter" data-bind="value:keyword, valueUpdate: 'afterkeydown'"/>
+    <button type="button" class="btn btn-default" id='btnSearch' data-bind="click:search"><i class="fa fa-search"></i></button>
+    
+    <div class="row" data-bind="foreach: images">
+        <div class="pane">
+	        <div class="col-sm-6 col-md-3"  style = "width: 300px; height: 180px;">
+	            <a class="thumbnail" data-bind="attr: {href: link}">
+	                <img style="width: 260px; height: 180px;" data-bind="attr: { src: url}"/>
+	            </a>
+	        </div>
+
+	        <div class="col-sm-6 col-md-3" style = "width: 300px; height: 180px;">
+	             <h6> <span class="desc" data-bind="text:txt"></span></h6>
+	        </div>
+		</div>        	
+    </div>
+</section>
