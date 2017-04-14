@@ -13,13 +13,14 @@
             if (this.images().length > 0) {
                 return;
             }
-            // console.log('1');
+            
             var that = this;
+
             $.get('https://www.reddit.com/r/pics/.json?jsonp=', 
                 function(data, status) {
-
-                // console.log(data.data.children[0].data);
+                
                 var img = [];
+                
                 for(var i=0; i<data.data.children.length; i++)
                 {
                 	
@@ -30,24 +31,12 @@
                 			}
                 }
 
-                // console.log(img);
-           
                 that.images(img);
-                
-
-                
-            },'json');
-            
-        },
-
-        attached: function(){
-        	
-
-
+                                
+            },'json');            
         },
 
         search: function(){
-        	// console.log(keyword());
 
         	var div = $('.desc');
 
@@ -66,20 +55,6 @@
 			
         	}
 
-
-     //    	$(document).ready(function(){
-     //    		var div = $('.desc');
-     //    		console.log(div.length);
-     //    		for(var j=0; j<div.length; j++)
-     //    		{
-     //  				$(div[j]).click(function(){
-					// 	console.log(12);
-					// 	picDetail.show();
-					   
-					// });
-     //    		}	
-
-     //    	})
         }
 		
     }
